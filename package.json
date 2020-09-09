@@ -1,0 +1,47 @@
+{
+  "name": "change_log_generator",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:joeyJsonar/change_log_generator.git",
+  "author": "Joey Andres <joey@jsonar.com>",
+  "license": "MIT",
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run build:types && npm run build:js",
+    "build:types": "tsc",
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "lint": "eslint 'src/**/*.ts' --quiet"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/polyfill": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/config": "^0.0.36",
+    "@types/lodash": "^4.14.161",
+    "@typescript-eslint/eslint-plugin": "^3.0.2",
+    "@typescript-eslint/parser": "^3.0.2",
+    "config": "^3.3.1",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "husky": "^4.2.5",
+    "lodash": "^4.17.20",
+    "moment": "^2.24.0",
+    "octokat": "^0.10.0",
+    "octonode": "^0.9.5",
+    "prettier": "^2.0.5",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  }
+}

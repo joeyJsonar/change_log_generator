@@ -1,0 +1,12 @@
+{
+  "authorizationToken": "5533a0da65144c16018f530afaf053dffd869b23",
+  "org": "jsonar",
+  "repo": "kibana",
+  "closedAfter": "2020-08-22T00:00:00.000Z",
+  "labels": {
+    "bugFix": ["bug :beetle:"],
+    "enhancement": ["enhancement"],
+    "infrastructure": [],
+    "devOps": ["DevOps :mage_man:"]
+  }
+}
