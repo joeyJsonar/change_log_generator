@@ -1,5 +1,5 @@
 {
-  "name": "change_log_generator",
+  "name": "@jsonar/change_log_generator",
   "version": "1.0.0",
   "main": "dist/index.js",
   "repository": "git@github.com:joeyJsonar/change_log_generator.git",
@@ -21,6 +21,7 @@
     "@babel/polyfill": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",
+    "@types/cli-progress": "^3.8.0",
     "@types/config": "^0.0.36",
     "@types/lodash": "^4.14.161",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
@@ -45,5 +46,11 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
+  },
+  "dependencies": {
+    "@types/bluebird": "^3.5.32",
+    "bluebird": "^3.7.2",
+    "cli-progress": "^3.8.2",
+    "rxjs": "^6.6.3"
   }
 }

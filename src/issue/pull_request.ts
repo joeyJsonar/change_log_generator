@@ -1,6 +1,8 @@
+import { memoize } from 'lodash';
 import { Moment } from 'moment';
 import { Issue } from './issue';
 import { Item } from './item';
+import { Category } from '../category';
 
 export class PullRequest implements Item {
   public readonly title: string;
@@ -33,4 +35,21 @@ export class PullRequest implements Item {
 
     return undefined;
   }
+
+  public getCategory() {
+    const prLabelSet = new Set<string>(this.labels);
+
+    for (const category of ['bug', 'enhancement', 'infrastructure', 'task', 'test']) {
+      const intersect = new Set([...prLabelSet].filter((i) => this.getLabels(category).has(i)));
+      if (intersect.size) {
+        return category;
+      }
+    }
+
+    return 'misc';
+  }
+
+  private getLabels = memoize((category: string) => {
+    return new Category(category).labels;
+  });
 }

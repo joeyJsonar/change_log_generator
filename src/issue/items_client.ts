@@ -3,14 +3,15 @@ import moment from 'moment';
 import config from 'config';
 // @ts-ignore
 import Octokat from 'octokat';
-import { Item, ItemFactory } from './issue';
+import { Item } from './item';
+import { ItemFactory } from './item_factory';
 
 const orgName = config.get('org');
 const repoName = config.get('repo');
 const closedTimeframeFrom = config.get('closedTimeframe.from') as string;
 const closedTimeframeTo = config.get('closedTimeframe.to') as string;
 
-export class ItemsFetch {
+export class ItemsClient {
   public async fetchById(id: string): Promise<Item> {
     const octo = new Octokat({ token: config.get('authorizationToken') });
     const repo = await octo.repos(orgName, repoName).fetch();
@@ -44,8 +45,8 @@ export class ItemsFetch {
       const closedAtDate = moment(item.closedAt);
 
       return (
-        closedTimeframeFromDate.isSameOrAfter(closedTimeframeFrom) &&
-        closedTimeframeToDate.isBefore(closedAtDate)
+        closedAtDate.isSameOrAfter(closedTimeframeFromDate) &&
+        closedAtDate.isBefore(closedTimeframeToDate)
       );
     });
 
