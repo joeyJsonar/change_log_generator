@@ -31,6 +31,7 @@ module.exports = {
     'no-plusplus': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     'import/no-extraneous-dependencies': 'off',
+    'lines-between-class-members': 'off',
   },
   settings: {
     'import/resolver': {

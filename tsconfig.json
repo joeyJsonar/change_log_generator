@@ -16,7 +16,7 @@
     ],
     // Node 8 should support everything output by esnext, we override this
     // in webpack with loader-level compiler options
-    "target": "es2020",
+    "target": "esnext",
     // Use commonjs for node, overridden in webpack to keep import statements
     // to maintain support for things like `await import()`
     "module": "commonjs",

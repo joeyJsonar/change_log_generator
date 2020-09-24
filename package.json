@@ -11,11 +11,13 @@
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
-    "lint": "eslint 'src/**/*.ts' --quiet"
+    "lint": "eslint 'src/**/*.ts' --quiet",
+    "generate-change-log": "node ./dist/index.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/polyfill": "^7.11.5",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-typescript": "^7.10.4",

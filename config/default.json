@@ -1,12 +1,16 @@
 {
-  "authorizationToken": "5533a0da65144c16018f530afaf053dffd869b23",
+  "authorizationToken": "5c9edb9b9aa89972a13160345e4e57c2525788d1",
   "org": "jsonar",
   "repo": "kibana",
-  "closedAfter": "2020-08-22T00:00:00.000Z",
+  "closedTimeframe": {
+    "from": "2020-08-22T00:00:00.000Z",
+    "to": "2020-08-29T00:00:00.000Z"
+  },
   "labels": {
-    "bugFix": ["bug :beetle:"],
+    "bug": ["bug :beetle:"],
     "enhancement": ["enhancement"],
-    "infrastructure": [],
-    "devOps": ["DevOps :mage_man:"]
+    "infrastructure": ["feature"],
+    "task": ["DevOps :mage_man:", "task"],
+    "test": ["test"]
   }
 }
